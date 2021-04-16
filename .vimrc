@@ -2,21 +2,22 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'majutsushi/tagbar'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'mileszs/ack.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'vim-scripts/ZoomWin'
-Plugin 'rust-lang/rust.vim'
-
+Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plugin 'scrooloose/nerdtree'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-repeat'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'bronson/vim-trailing-whitespace'
+"Plugin 'mileszs/ack.vim'
+"Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'vim-scripts/ZoomWin'
+"Plugin 'rust-lang/rust.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -64,3 +65,7 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " Remap <C-w>z to zoom window
 nnoremap <silent> <C-w>z :ZoomWin<CR>
+
+" Remap <C-g> to toggle NERDTree pane
+nnoremap <C-g> :NERDTreeToggle<CR>
+
