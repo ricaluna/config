@@ -1,0 +1,15 @@
+export UHD_IMAGES_DIR="/usr/local/share/uhd/images/"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
+export VIVADO_BIN="/tools/Xilinx/Vivado/2022.2/bin"
+
+
+PATH="/home/rluna/.local/bin:$PATH"
+PATH="/usr/share/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH"
+PATH="/home/rluna/.cargo/env:$PATH"
+PATH="$VIVADO_BIN:$PATH"
+
+# Parses and displays git branch
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \n$ "
